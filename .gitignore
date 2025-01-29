@@ -1,4 +1,9 @@
-### AL ###
+/.idea
+/.vscode
+.DS_Store
+/public
+/node_modules
+
 #Template for AL projects for Dynamics 365 Business Central
 #launch.json folder
 .vscode/
