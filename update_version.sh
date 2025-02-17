@@ -15,9 +15,9 @@ echo "Release version $VERSION created successfully."
 
 
 # Check the version of the module in another Go project
-echo "\n\nChecking the version of the module in another Go project:"
+echo "\n\nChecking the version of the GO module:"
 go list -m github.com/qaiswardag/goweb-toolkit
 
 # See the current tag
-echo "Current tag:"
+echo "\nChecking the Current tag the GO module::"
 git describe --tags
