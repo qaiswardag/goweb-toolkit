@@ -8,7 +8,7 @@ git tag $VERSION
 git push origin $VERSION
 
 # Create a new release on GitHub using the GitHub CLI
-gh release create $VERSION --title "$VERSION" --notes "Release notes for $VERSION"
+gh release create $VERSION --title "$VERSION" --notes --notes-file RELEASE_NOTES.md
 
 echo "Release version $VERSION created successfully."
 
