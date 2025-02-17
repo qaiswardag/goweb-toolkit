@@ -13,14 +13,6 @@ gh release create $VERSION --title "$VERSION" --notes --notes-file RELEASE_NOTES
 echo "Release version $VERSION created successfully."
 
 
-
-# Check the curent version of the GO module
-echo "\n\nChecking the version of the GO module:"
-go list -m github.com/qaiswardag/goweb-toolkit
-go list -m -versions github.com/qaiswardag/goweb-toolkit | grep -o "$VERSION"
-
-
-
-# Check the current tag of  the GO module
-echo "\nChecking the Current tag of the GO module::"
+# Check the current tag of the GO module
+echo "\n\nChecking the Current tag of the GO module::"
 git describe --tags
