@@ -1,5 +1,5 @@
 # Read the version number from the VERSION file
-VERSION=$(cat VERSION)
+VERSION=$(cat update_current_version_number)
 
 # Check if release_notes.md exists and is not empty
 if [ ! -s release_notes.md ]; then
