@@ -48,7 +48,7 @@ func main() {
 }
 ```
 
-## Get the Latest Update of the Module in Another Go Project
+## Get the latest tagged version
 
 To get the latest tagged version of the module, run:
 
