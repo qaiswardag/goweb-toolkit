@@ -1,9 +1,10 @@
-# Read the version number from the VERSION file
-VERSION=$(cat update_current_version_number)
+# Read the version number from the file
+pwd
+VERSION=$(cat ./new_release/update_current_version_number)
 
-# Check if update_version_release_notes.md exists and is not empty
-if [ ! -s update_version_release_notes.md ]; then
-  echo "Error: update_version_release_notes.md file is missing or empty."
+# Check if the file exists and is not empty
+if [ ! -s ./new_release/RELEASE_NOTES.md ]; then
+  echo "Error: File is missing or empty."
   exit 1
 fi
 
@@ -14,7 +15,7 @@ git tag $VERSION
 git push origin $VERSION
 
 # Create a GitHub release with release notes
-gh release create $VERSION --title "$VERSION" --notes-file update_version_release_notes.md
+gh release create $VERSION --title "$VERSION" --notes-file ./new_release/RELEASE_NOTES.md
 
 if [ $? -eq 0 ]; then
   echo "Release version $VERSION created successfully."

@@ -1,3 +1,3 @@
 update:
 	@echo "Updating version..."
-	@cd versioning && ./update_version.sh
+	@sh ./new_release/release_version.sh
