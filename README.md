@@ -50,18 +50,10 @@ func main() {
 
 ## Get the Latest Update of the Module in Another Go Project
 
-In real-life scenarios, most people use the following command to get the latest tagged version of a module.
-
 To get the latest tagged version of the module, run:
 
 ```sh
 go get -u github.com/qaiswardag/goweb-toolkit@v0.0.0
-```
-
-To get a specific version of the module, run:
-
-```sh
-go get github.com/qaiswardag/goweb-toolkit@v0.0.0
 ```
 
 ## License
