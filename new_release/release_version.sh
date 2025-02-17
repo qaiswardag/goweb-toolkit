@@ -1,6 +1,6 @@
 # Read the version number from the file
 pwd
-VERSION=$(cat ./new_release/update_current_version_number)
+VERSION=$(cat ./new_release/VERSION)
 
 # Check if the file exists and is not empty
 if [ ! -s ./new_release/RELEASE_NOTES.md ]; then
