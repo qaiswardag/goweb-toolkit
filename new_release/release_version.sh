@@ -39,7 +39,7 @@ TEMP_RELEASE_NOTES=$(mktemp)
 cat ./new_release/RELEASE_NOTES.md > "$TEMP_RELEASE_NOTES"
 
 # Append the latest commits since the last tag to the temporary release notes file
-echo -e "\n\n## Latest Commits\n" >> "$TEMP_RELEASE_NOTES"
+echo "\n\n## Latest Commits\n" >> "$TEMP_RELEASE_NOTES"
 git log "$LATEST_TAG"..HEAD --pretty=format:"- %s (%h)" >> "$TEMP_RELEASE_NOTES"
 
 # Create a new tag with the desired version number
@@ -69,5 +69,5 @@ fi
 rm "$TEMP_RELEASE_NOTES"
 
 # Check the current tag of the GO module
-echo -e "\n\nChecking the current tag of the GO module:"
+echo "\n\nChecking the current tag of the GO module:"
 git describe --tags
