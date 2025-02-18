@@ -29,6 +29,11 @@ if [ ! -s ./new_release/RELEASE_NOTES.md ]; then
   exit 1
 fi
 
+# Append the latest commits to the release notes
+echo -e "\n\n## Latest Commits\n" >> ./new_release/RELEASE_NOTES.md
+git log -5 --pretty=format:"- %s (%h)" >> ./new_release/RELEASE_NOTES.md
+
+
 # Create a new tag with the desired version number
 git tag "$VERSION"
 if [ $? -ne 0 ]; then
