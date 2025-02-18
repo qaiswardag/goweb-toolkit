@@ -29,6 +29,18 @@ if [ ! -s ./new_release/RELEASE_NOTES.md ]; then
   exit 1
 fi
 
+# Get the latest tag
+LATEST_TAG=$(git describe --tags --abbrev=0)
+
+# Create a temporary file for the release notes
+TEMP_RELEASE_NOTES=$(mktemp)
+
+# Copy the existing release notes to the temporary file
+cat ./new_release/RELEASE_NOTES.md > "$TEMP_RELEASE_NOTES"
+
+# Append the latest commits since the last tag to the temporary release notes file
+echo -e "\n\n## Latest Commits\n" >> "$TEMP_RELEASE_NOTES"
+git log "$LATEST_TAG"..HEAD --pretty=format:"- %s (%h)" >> "$TEMP_RELEASE_NOTES"
 
 # Create a new tag with the desired version number
 git tag "$VERSION"
@@ -45,13 +57,16 @@ if [ $? -ne 0 ]; then
 fi
 
 # Create a GitHub release with release notes
-gh release create "$VERSION" --title "$VERSION" --notes-file ./new_release/RELEASE_NOTES.md
+gh release create "$VERSION" --title "$VERSION" --notes-file "$TEMP_RELEASE_NOTES"
 if [ $? -eq 0 ]; then
   echo "Release version $VERSION created successfully."
 else
   echo "Error: Failed to create GitHub release."
   exit 1
 fi
+
+# Remove the temporary release notes file
+rm "$TEMP_RELEASE_NOTES"
 
 # Check the current tag of the GO module
 echo -e "\n\nChecking the current tag of the GO module:"
