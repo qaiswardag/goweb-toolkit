@@ -7,5 +7,5 @@ const randomStringSource = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
 type Tools struct{}
 
 func (t *Tools) RandomString() {
-	fmt.Println("hii")
+	fmt.Println("Helooooo. This is a random string.")
 }
