@@ -8,14 +8,17 @@ import (
 
 // Sample words for generating Lorem Ipsum text
 var randomWords = []string{
-	"lorem", "ipsum", "dolor", "sit", "amet", "consectetur", "adipiscing", "elit",
+	"amet", "consectetur", "adipiscing", "elit",
 	"nunc", "potenti", "felis", "rhoncus", "sodales", "arcu", "eleifend", "ullamcorper",
 	"tristique", "nisi", "platea", "pellentesque", "aptent", "risus", "odio", "tincidunt",
 	"ante", "sem", "dolor", "parturient", "egestas", "nisl", "purus", "habitasse",
-	"magna", "hac", "luctus", "sapien", "turpis", "facilisis", "orci", "pharetra",
-	"taciti", "inceptos", "donec", "facilisi", "eros", "imperdiet", "volutpat",
-	"morbi", "lectus", "leo", "vestibulum", "posuere", "quam", "suspendisse", "class",
-	"lacinia", "metus", "laoreet", "proin", "tempor", "sodales", "pretium",
+	"magna", "hac", "luctus", "sapien", "turpis", "orci", "pharetra",
+	"taciti", "inceptos", "donec", "eros", "imperdiet", "volutpat",
+	"morbi", "lectus", "leo", "vestibulum", "posuere", "suspendisse",
+	"aurora", "cherish", "crystalline", "dulcet", "enchant", "ephemeral", "ethereal",
+	"euphoria", "felicity", "halcyon", "idyllic", "incandescent", "labyrinth", "luminous",
+	"opalescent", "petrichor", "sequoia", "serendipity", "solitude", "supine", "volutpat",
+	"lacinia", "metus", "proin", "sodales", "pretium", "en",
 }
 
 // Tools struct
