@@ -19,6 +19,8 @@ var randomWords = []string{
 	"euphoria", "felicity", "halcyon", "idyllic", "incandescent", "labyrinth", "luminous",
 	"opalescent", "petrichor", "sequoia", "serendipity", "solitude", "supine", "volutpat",
 	"lacinia", "metus", "proin", "sodales", "pretium", "en",
+	"plethora", "vellichor", "blossoming", "panacea", "languor", "limerence",
+	"am", "on", "is", "og",
 }
 
 // Tools struct
