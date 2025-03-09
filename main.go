@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	s := tools.Tools{}
+	w := tools.Tools{}
 
-	fmt.Println(s.RandomString(20))
+	fmt.Println(w.RandomWords(2))
 }

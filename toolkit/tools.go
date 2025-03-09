@@ -1,18 +1,35 @@
 package toolkit
 
-import "crypto/rand"
+import (
+	"math/rand"
+	"strings"
+	"time"
+)
 
-const randomStringSource = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_+"
+// Sample words for generating Lorem Ipsum text
+var loremWords = []string{
+	"lorem", "ipsum", "dolor", "sit", "amet", "consectetur", "adipiscing", "elit",
+	"nunc", "potenti", "felis", "rhoncus", "sodales", "arcu", "eleifend", "ullamcorper",
+	"tristique", "nisi", "platea", "pellentesque", "aptent", "risus", "odio", "tincidunt",
+	"ante", "sem", "dolor", "parturient", "egestas", "nisl", "purus", "habitasse",
+	"magna", "hac", "luctus", "sapien", "turpis", "facilisis", "orci", "pharetra",
+	"taciti", "inceptos", "donec", "facilisi", "eros", "imperdiet", "volutpat",
+	"morbi", "lectus", "leo", "vestibulum", "posuere", "quam", "suspendisse", "class",
+	"lacinia", "metus", "laoreet", "proin", "tempor", "sodales", "pretium",
+}
 
+// Tools struct
 type Tools struct{}
 
-func (t *Tools) RandomString(n int) string {
-	s, r := make([]rune, n), []rune(randomStringSource)
+// RandomWords generates a Lorem Ipsum-like text with n words
+func (t *Tools) RandomWords(n int) string {
+	src := rand.NewSource(time.Now().UnixNano()) // Create a new random source
+	r := rand.New(src)                           // Create a new Rand instance
 
-	for i := range s {
-		p, _ := rand.Prime(rand.Reader, len(r))
-		x, y := p.Uint64(), uint64(len(r))
-		s[i] = r[x%y]
+	var words []string
+	for i := 0; i < n; i++ {
+		words = append(words, loremWords[r.Intn(len(loremWords))])
 	}
-	return string(s)
+
+	return strings.Join(words, " ")
 }

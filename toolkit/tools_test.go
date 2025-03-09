@@ -2,12 +2,12 @@ package toolkit
 
 import "testing"
 
-func TestTools_RandomString(t *testing.T) {
+func TestToolsRandomWords(t *testing.T) {
 	testTools := Tools{}
 
-	s := testTools.RandomString(20)
+	w := testTools.RandomWords(20)
 
-	if len(s) != 20 {
-		t.Error("Wrong length random string returned.")
+	if len(w) != 20 {
+		t.Error("Wrong length random words returned.")
 	}
 }
