@@ -26,10 +26,10 @@ var randomWords = []string{
 // Tools struct
 type Tools struct{}
 
-// RandomWords generates a Lorem Ipsum-like text with n words
+// RandomWords
 func (t *Tools) RandomWords(n int) string {
-	src := rand.NewSource(time.Now().UnixNano()) // Create a new random source
-	r := rand.New(src)                           // Create a new Rand instance
+	src := rand.NewSource(time.Now().UnixNano())
+	r := rand.New(src)
 
 	var words []string
 	for range make([]int, n) {
