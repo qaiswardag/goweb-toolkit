@@ -7,7 +7,8 @@ import (
 )
 
 func main() {
-	w := tools.Tools{}
+	tools := tools.Tools{}
 
-	fmt.Println(w.RandomWords(2))
+	rw := tools.RandomWords(20)
+	fmt.Println(rw)
 }

@@ -7,7 +7,7 @@ import (
 )
 
 // Sample words for generating Lorem Ipsum text
-var loremWords = []string{
+var randomWords = []string{
 	"lorem", "ipsum", "dolor", "sit", "amet", "consectetur", "adipiscing", "elit",
 	"nunc", "potenti", "felis", "rhoncus", "sodales", "arcu", "eleifend", "ullamcorper",
 	"tristique", "nisi", "platea", "pellentesque", "aptent", "risus", "odio", "tincidunt",
@@ -27,8 +27,8 @@ func (t *Tools) RandomWords(n int) string {
 	r := rand.New(src)                           // Create a new Rand instance
 
 	var words []string
-	for i := 0; i < n; i++ {
-		words = append(words, loremWords[r.Intn(len(loremWords))])
+	for range make([]int, n) {
+		words = append(words, randomWords[r.Intn(len(randomWords))])
 	}
 
 	return strings.Join(words, " ")
