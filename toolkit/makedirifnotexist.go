@@ -2,6 +2,6 @@ package toolkit
 
 import "fmt"
 
-func MakeDirIfNotExist() {
+func (t Tools) MakeDirIfNotExist() {
 	fmt.Println("hii: MakeDirIfNotExist")
 }

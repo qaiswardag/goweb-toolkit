@@ -23,9 +23,6 @@ var randomWords = []string{
 	"am", "on", "is", "og",
 }
 
-// Tools struct
-type Tools struct{}
-
 // capitalizeFirstLetter capitalizes the first letter of a string
 func capitalizeFirstLetter(s string) string {
 	if len(s) == 0 {
