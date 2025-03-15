@@ -8,7 +8,6 @@ import (
 
 func main() {
 	tools := tools.Tools{}
-
-	rw := tools.RandomWords(20)
-	fmt.Println(rw)
+	fmt.Println("Hello")
+	tools.EnsureDirCreated("qw")
 }
