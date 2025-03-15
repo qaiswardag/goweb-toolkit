@@ -26,15 +26,38 @@ var randomWords = []string{
 // Tools struct
 type Tools struct{}
 
-// RandomWords
+// capitalizeFirstLetter capitalizes the first letter of a string
+func capitalizeFirstLetter(s string) string {
+	if len(s) == 0 {
+		return s
+	}
+	return strings.ToUpper(string(s[0])) + s[1:]
+}
+
 func (t *Tools) RandomWords(n int) string {
 	src := rand.NewSource(time.Now().UnixNano())
 	r := rand.New(src)
 
-	var words []string
+	words := []string{}
 	for range make([]int, n) {
 		words = append(words, randomWords[r.Intn(len(randomWords))])
 	}
 
-	return strings.Join(words, " ")
+	// Capitalize the first character of the first word
+	if len(words) > 0 {
+		words[0] = capitalizeFirstLetter(words[0])
+
+	}
+
+	// Insert dots randomly after every 10 to 16 words and capitalize the first character after each dot
+	for i := 10; i < len(words); i += r.Intn(7) + 10 {
+		if i < len(words) {
+			words[i] += "."
+			if i+1 < len(words) {
+				words[i+1] = capitalizeFirstLetter(words[i+1])
+			}
+		}
+	}
+
+	return strings.Join(words, " ") + "."
 }
