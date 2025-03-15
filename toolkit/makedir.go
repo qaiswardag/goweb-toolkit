@@ -5,10 +5,10 @@ import (
 	"os"
 )
 
-func (t *Tools) EnsureDirCreated(dirName string) error {
+func (t *Tools) EnsureDirCreated(dirName string, perm os.FileMode) error {
 	if _, err := os.Stat(dirName); err != nil {
 		if os.IsNotExist(err) {
-			return os.Mkdir(dirName, 0777)
+			return os.Mkdir(dirName, perm)
 		}
 		return err
 	}
