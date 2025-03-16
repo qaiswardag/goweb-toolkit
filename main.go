@@ -9,5 +9,5 @@ import (
 func main() {
 	tools := tools.Tools{}
 	fmt.Println("Hello")
-	tools.EnsureDirCreated("qw")
+	tools.EnsureDirCreated("hello", 0777)
 }
